@@ -1,29 +1,32 @@
 function click1(event) {
-    let f1 = document.getElementsByName("field1");
+    event.preventDefault();
+    
+    let f1 = document.getElementsByName("field1")[0];
     let r = document.getElementById("result");
-    let s = document.getElementsByName("select1");
-    let m = f1[0].value;
-
+    let s = document.getElementsByName("select1")[0];
+    let m = f1.value;
+    
+    // Проверка на корректность ввода
     if (m.match(/^\d+$/) === null) {
         r.innerHTML = "некорректное значение";
-        event.preventDefault();
         return false;
     }
     
-    if (s[0].value === "v1") {
-        r.innerHTML = f1[0].value * 320;
-    }
-    if (s[0].value === "v2") {
-        r.innerHTML = f1[0].value * 2;
-    }
-    if (s[0].value === "v3") {
-        r.innerHTML = f1[0].value * 1100;
-    }
-    if (s[0].value === "v4") {
-        r.innerHTML = f1[0].value * 210;
+    let value = parseInt(m);
+    let result = 0;
+    
+    // Вычисления
+    if (s.value === "v1") {
+        result = value * 320;
+    } else if (s.value === "v2") {
+        result = value * 2;
+    } else if (s.value === "v3") {
+        result = value * 1100;
+    } else if (s.value === "v4") {
+        result = value * 210;
     }
     
-    event.preventDefault();
+    r.innerHTML = result;
     return false;
 }
 
