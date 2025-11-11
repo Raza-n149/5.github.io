@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Калькулятор строематериалов</title>
-    <script src="func.js"></script>
+    <title>Калькулятор строительных материалов</title>
+    <script defer src="func.js"></script>
     <style>
         body {
             display: flex;
@@ -11,28 +11,36 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-size: 18px;
         }
         
-        .container {
+        h1 {
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 2.5em;
             text-align: center;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f9f9f9;
         }
         
-        input, select, button {
-            margin: 5px;
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        input[type="text"], select, button {
+            font-size: 1.1em;
             padding: 8px;
-            font-size: 16px;
+            margin: 5px;
+            width: 100%;
+            max-width: 300px;
         }
         
         button {
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
         }
@@ -41,37 +49,35 @@
             background-color: #0056b3;
         }
         
+        h3 {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
         #result {
             font-weight: bold;
-            font-size: 20px;
+            font-size: 1.8em;
             color: #28a745;
+            text-align: center;
+            min-height: 40px;
             margin-top: 10px;
-            min-height: 30px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Калькулятор строительных материалов</h1>
-        <form>
-            <div>
-                <input name="field1" type="text" placeholder="Введите количество">
-            </div>
-            <div>
-                <select name="select1">
-                    <option value="v1">Доски (320 руб/шт)</option>
-                    <option value="v2">Гвозди (2 руб/шт)</option>
-                    <option value="v3">Пенаплекс (1100 руб/уп)</option>
-                    <option value="v4">Молоток (210 руб/шт)</option>
-                </select>
-            </div>
-            <div>
-                <button id="button1" type="button">Рассчитать стоимость</button>
-            </div>
-            <h3>Стоимость:</h3>
-            <div id="result">-</div>
-        </form>
-    </div>
+    <h1>Задание 5</h1>
+    <form>
+        <input name="field1" type="text" placeholder="Введите количество">
+        <select name="select1">
+            <option value="v1">Доски</option>
+            <option value="v2">Гвозди</option>
+            <option value="v3">Пенаплекс</option>
+            <option value="v4">Молоток</option>
+        </select>
+        <button id="button1" type="button">OK</button>
+        <h3>Стоимость:</h3>
+        <div id="result">-</div>
+    </form>
 </body>
 </html>
-
