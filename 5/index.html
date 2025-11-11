@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <title> Калькулятор строематериалов</title>
+         <script defer src="func.js"></script>
+
+    </head>
+
+    <body style="display: flex; flex-direction: column;">
+        <h1 style="margin-left: auto; margin-right: auto;"> Задание 5 </h1>
+          <form>
+            <input name="field1" type="text">
+            <select name="select1">
+              <option value="v1">Доски</option>
+              <option value="v2">Гвозди</option>
+              <option value="v3">Пенаплекс</option>
+              <option value="v4">Молоток</option>
+            </select>
+            <button id="button1" onclick="return click1();">OK</button>
+            <h3>Стоимость: </h3><div id="result"></div>
+          </form>
+    </body>
+</html>
