@@ -2,23 +2,55 @@
 
 <html lang="ru">
     <head>
-        <title> Калькулятор строематериалов</title>
-         <script defer src="func.js"></script>
-
+        <title>Калькулятор строематериалов</title>
+        <script defer src="func.js"></script>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                width: 300px;
+                text-align: center;
+            }
+            
+            input, select, button {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+            
+            #result {
+                font-weight: bold;
+                font-size: 18px;
+                margin-top: 10px;
+            }
+        </style>
     </head>
 
-    <body style="display: flex; flex-direction: column;">
-        <h1 style="margin-left: auto; margin-right: auto;"> Задание 5 </h1>
-          <form>
-            <input name="field1" type="text">
+    <body>
+        <h1>Задание 5</h1>
+        <form>
+            <input name="field1" type="text" placeholder="Введите количество">
             <select name="select1">
-              <option value="v1">Доски</option>
-              <option value="v2">Гвозди</option>
-              <option value="v3">Пенаплекс</option>
-              <option value="v4">Молоток</option>
+                <option value="v1">Доски</option>
+                <option value="v2">Гвозди</option>
+                <option value="v3">Пенаплекс</option>
+                <option value="v4">Молоток</option>
             </select>
-            <button id="button1" onclick="return click1();">OK</button>
-            <h3>Стоимость: </h3><div id="result"></div>
-          </form>
+            <button id="button1" onclick="return click1(event);">OK</button>
+            <h3>Стоимость: </h3>
+            <div id="result"></div>
+        </form>
     </body>
 </html>
