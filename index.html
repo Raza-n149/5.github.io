@@ -30,10 +30,22 @@
                 box-sizing: border-box;
             }
             
+            button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            
+            button:hover {
+                background-color: #45a049;
+            }
+            
             #result {
                 font-weight: bold;
                 font-size: 18px;
                 margin-top: 10px;
+                color: #2c3e50;
             }
         </style>
     </head>
@@ -48,9 +60,9 @@
                 <option value="v3">Пенаплекс</option>
                 <option value="v4">Молоток</option>
             </select>
-            <button id="button1" onclick="return click1(event);">OK</button>
+            <button id="button1" type="button">OK</button>
             <h3>Стоимость: </h3>
-            <div id="result"></div>
+            <div id="result">-</div>
         </form>
     </body>
 </html>
