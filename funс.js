@@ -1,52 +1,37 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const button = document.getElementById("button1");
-    const result = document.getElementById("result");
-    
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
-        
-        const input = document.getElementsByName("field1")[0];
-        const select = document.getElementsByName("select1")[0];
-        const value = input.value.trim();
-        
-        console.log("Кнопка нажата"); // Для отладки
-        console.log("Введенное значение:", value); // Для отладки
-        console.log("Выбранный вариант:", select.value); // Для отладки
-        
-        // Проверка на пустое значение
-        if (value === "") {
-            result.innerHTML = "введите значение";
-            return;
-        }
-        
-        // Проверка на число
-        if (!/^\d+$/.test(value)) {
-            result.innerHTML = "некорректное значение";
-            return;
-        }
-        
-        const numberValue = parseInt(value);
-        let total = 0;
-        
-        // Расчет стоимости
-        switch(select.value) {
-            case "v1":
-                total = numberValue * 320;
-                break;
-            case "v2":
-                total = numberValue * 2;
-                break;
-            case "v3":
-                total = numberValue * 1100;
-                break;
-            case "v4":
-                total = numberValue * 210;
-                break;
-            default:
-                total = 0;
-        }
-        
-        result.innerHTML = total + " руб.";
-        console.log("Результат:", total); // Для отладки
-    });
+window.addEventListener("DOMContentLoaded", function () {
+    let b = document.getElementById("button1");
+    b.addEventListener("click", click1);
 });
+
+function click1() {
+    let f1 = document.getElementsByName("field1");
+    let r = document.getElementById("result");
+    let s = document.getElementsByName("select1");
+    let m = f1[0].value;
+    
+    // Проверка на корректность ввода
+    if (m.match(/^\d+$/) === null) {
+        r.innerHTML = "некорректное значение";
+        return false;
+    }
+    
+    let quantity = parseInt(m);
+    let total = 0;
+    
+    // Расчет стоимости в зависимости от выбранного материала
+    if (s[0].value === "v1") {
+        total = quantity * 320;
+    }
+    if (s[0].value === "v2") {
+        total = quantity * 2;
+    }
+    if (s[0].value === "v3") {
+        total = quantity * 1100;
+    }
+    if (s[0].value === "v4") {
+        total = quantity * 210;
+    }
+    
+    r.innerHTML = total + " руб.";
+    return false;
+}
